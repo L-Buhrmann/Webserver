@@ -1,0 +1,143 @@
+<html>
+  <head><title>SQL-Data</title> <meta charset="utf-8"></head>
+  <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='stylesheets/table.css') }}"/>
+  <body>
+    <center>
+    <h1> AzureSQL Database </h1><br><hr>    <h2> Customer </h2>
+<table border="2" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>CustomerID</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>DateOfBirth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Tobias</td>
+      <td>Baumgarten</td>
+      <td>1995-08-11</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Peter</td>
+      <td>Zwegert</td>
+      <td>1962-01-01</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Laurits</td>
+      <td>Buhrmann</td>
+      <td>1999-03-03</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Oliver</td>
+      <td>Kahn</td>
+      <td>1974-03-23</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Angela</td>
+      <td>Merkel</td>
+      <td>1952-09-22</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Max</td>
+      <td>Mustermann</td>
+      <td>1909-02-02</td>
+    </tr>
+  </tbody>
+</table><be><hr>
+    <h2> Orders </h2>
+<table border="2" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>OrderID</th>
+      <th>Date_and_Time</th>
+      <th>CustomerID</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table><br><hr>
+    <h2> Product </h2>
+<table border="2" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>ProductID</th>
+      <th>ProductName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10001</td>
+      <td>Schwarze Felge</td>
+    </tr>
+    <tr>
+      <td>10002</td>
+      <td>Weiße Felge</td>
+    </tr>
+    <tr>
+      <td>10003</td>
+      <td>Metallische Felge</td>
+    </tr>
+  </tbody>
+</table><br><hr>
+    <h2> Position </h2>
+<table border="2" class="dataframe redTable">
+  <thead>
+    <tr style="text-align: center;">
+      <th>OrderID</th>
+      <th>PositionID</th>
+      <th>ProductID</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table><br><hr>
+    <h2> Resource </h2>
+<table border="2" class="dataframe redTable">
+  <thead>
+    <tr style="text-align: center;">
+      <th>ResourceID</th>
+      <th>ProductID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SPS1</td>
+      <td>10001</td>
+    </tr>
+    <tr>
+      <td>SPS1</td>
+      <td>10002</td>
+    </tr>
+    <tr>
+      <td>SPS1</td>
+      <td>10003</td>
+    </tr>
+    <tr>
+      <td>SPS2</td>
+      <td>10001</td>
+    </tr>
+    <tr>
+      <td>SPS2</td>
+      <td>10003</td>
+    </tr>
+    <tr>
+      <td>SPS3</td>
+      <td>10002</td>
+    </tr>
+  </tbody>
+</table><br><hr>
+    <form action="/home">
+    <input type="submit" value="Back" name="action1"/>
+    </form>
+    </center>
+  </body>
+</html>

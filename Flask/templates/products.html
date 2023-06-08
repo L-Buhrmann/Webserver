@@ -1,0 +1,55 @@
+<html>
+  <head><title>SQL-Data</title> <meta charset="utf-8"></head>
+  <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='stylesheets/table.css') }}"/>
+  <body>
+    <center>
+    <h1> AzureSQL Database </h1><br><hr>    <h2> Products </h2>
+    <form action="/products" method="POST">
+    <input type="text" name="ProductID" id="ProductID" placeholder="ProductID" />
+    <input type="text" name="ProductName" id="ProductName" placeholder="ProductName" />
+    <input type="submit" value="Send" name="submit_button"/>
+    </form>
+    <form action="/products" method="POST">
+    <input type="text" name="Delete_ProductID" id="Delete_ProductID" placeholder="ProductID" />
+    <input type="submit" value="Delete" name="submit_button"/>
+    </form>
+<table border="2" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>ProductID</th>
+      <th>ProductName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5</td>
+      <td>[{"Work-Step1": "lackieren", "Work-Step2": "Sägen"}]</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>[{"WorkStep1": "lackieren", "WorkStep2": "Sägen"}]</td>
+    </tr>
+    <tr>
+      <td>10001</td>
+      <td>Rote Felge</td>
+    </tr>
+    <tr>
+      <td>10002</td>
+      <td>Schwarze Felge</td>
+    </tr>
+    <tr>
+      <td>10003</td>
+      <td>Weiße Felge</td>
+    </tr>
+    <tr>
+      <td>10004</td>
+      <td>Silberne Felge</td>
+    </tr>
+  </tbody>
+</table><br><hr>
+    <form action="/home">
+    <input type="submit" value="Back" name="action1"/>
+    </form>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+  <head><title>SQL-Data</title> <meta charset="utf-8"></head>
+  <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='stylesheets/table.css') }}"/>
+  <body>
+    <center>
+    <h1> AzureSQL Database </h1><br><hr>    <h2> Resources </h2>
+    <form action="/resources" method="POST">
+    <input type="text" name="ResourceID" id="ResourceID" placeholder="ResourceID" />
+    {% if products %}    <select name="Product" id="Product-select">
+    <option value="">--Please choose an Product--</option>     {% for i in products %}
+    <option value="{{i}}">{{i}}</option>
+    {% endfor %}
+    </select>
+    {% endif %}
+    <input type="submit" value="Send" name="submit_button"/>
+    </form>
+    <form action="/resources" method="POST">
+    {% if resources %}    <select name="Rescource" id="Product-select">
+    <option value="">--Please choose an Rescource--</option>     {% for i in resources %}
+    <option value="{{i}}">{{i}}</option>
+    {% endfor %}
+    </select>
+    {% endif %}
+    {% if productIDs %}    <select name="ProductID" id="Product-select">
+    <option value="">--Please choose an ProductID--</option>     {% for i in productIDs %}
+    <option value="{{i}}">{{i}}</option>
+    {% endfor %}
+    </select>
+    {% endif %}
+    <input type="submit" value="Delete" name="submit_button"/>
+    </form>
+<table border="2" class="dataframe">
+  <thead>
+    <tr style="text-align: center;">
+      <th>ResourceID</th>
+      <th>ProductID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SPS1</td>
+      <td>10002</td>
+    </tr>
+    <tr>
+      <td>SPS2</td>
+      <td>10004</td>
+    </tr>
+  </tbody>
+</table><br><hr>
+    <form action="/home">
+    <input type="submit" value="Back" name="action1"/>
+    </form>
+    </center>
+  </body>
+</html>

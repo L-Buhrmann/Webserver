@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Website Cloud anbindung</title>
+    </head>
+    <body>
+
+        <style>
+            textarea{resize:none;}
+            table, th, td {
+                border:1px solid black;
+                }   
+        </style>
+        <h1><strong>Cloud For Automation</strong></h1>
+            <label for="Orders">Orders:</label>
+            <textarea id="OrderID2" name="OrderID" placeholder="OrderID2" rows="1" cols="20"></textarea>
+            <textarea id="Orders" name="OrderID" placeholder="OrderID" rows="1" cols="20"></textarea>
+            <textarea id="Orders" name="OrderID" placeholder="OrderID" rows="1" cols="20"></textarea>
+            <textarea id="Orders" name="OrderID" placeholder="OrderID" rows="1" cols="20"></textarea>
+            <textarea id="Orders" name="OrderID" placeholder="OrderID" rows="1" cols="20"></textarea>
+            <textarea id="Orders" name="OrderID" placeholder="OrderID" rows="1" cols="20"></textarea>
+            <textarea id="Orders" name="OrderID" placeholder="OrderID" rows="1" cols="20"></textarea>
+            <button onclick=sendOrder()>Send</button>
+        <h2><strong>Overview</strong></h2>
+        <h3>Our Flask Buttons</h3>
+            <form action="/sendOrder" method="POST">
+                <input type="text" name="OrderID" id="OrderID" placeholder="OrderID" />
+                <input type="text" name="CustomerID" id="CustomerID" placeholder="CustomerID"/>
+                <input type="text" name="FirstName" id="FirstName" placeholder="FirstName" />
+                <input type="text" name="LastName" id="LastName" placeholder="LastName" />
+                <input type="date" name="DateOfBirth" id="DateOfBirth" placeholder="OrderID" />
+                <input type="text" name="ProductID" id="ProductID" placeholder="ProductName" />
+                <input type="text" name="ProductName" id="ProductName" placeholder="ProductName" />
+                <input type="text" name="PositionID" id="PositionID" placeholder="PositionID" />
+                <input type="text" name="Amount" id="Amount" placeholder="Amount" />
+                <input type="time" name="Time" id="Time" />
+                <input type="submit" value="VALUE1" name="action1"/>
+                <input type="submit" value="VALUE2" name="action2" />
+            </form>
+        <h3>Orders</h3>
+        <form >
+            {% if OrderID %}
+            <label>OrderID : {{OrderID}} </label>
+            {% endif %}
+    
+            {% if CustomerID %}
+            <label>CustomerID :{{CustomerID}} </label>
+            {% endif %}
+
+            {% if FirstName %}
+            <label>FirstName :{{FirstName}} </label>
+            {% endif %}
+
+            {% if LastName %}
+            <label>LastName :{{FirstName}} </label>
+            {% endif %}
+    
+            {% if DateOfBirth %}
+            <label>DateOfBirth :{{DateOfBirth}} </label>
+            {% endif %}
+    
+            {% if ProductID %}
+            <label>ProductID :{{ProductID}} </label>
+            {% endif %}
+    
+            {% if ProductName %}
+            <label>ProductName :{{ProductName}} </label>
+            {% endif %}
+    
+            {% if PositionID %}
+            <label>PositionID :{{PositionID}} </label>
+            {% endif %}
+
+            {% if Amount %}
+            <label>Amount :{{Amount}} </label>
+            {% endif %}
+    
+            {% if Time %}
+            <label>Time :{{Time}} </label>
+            {% endif %} 
+        </form>
+        {% if OrderID and CustomerID and FirstName and LastName and DateOfBirth and ProductID and ProductName and PositionID and Amount and Time %}
+            <table style="width:100%">
+                <tr>
+                    <th>OrderID</th>
+                    <th>CustomerID</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>DateOfBirth</th>
+                    <th>ProductID</th>
+                    <th>ProductName</th>
+                    <th>PositionID</th>
+                    <th>Amount</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td>{{OrderID}}</td>
+                    <td>{{CustomerID}}</td>
+                    <td>{{FirstName}}</td>
+                    <td>{{LastName}}</td>
+                    <td>{{DateOfBirth}}</td>
+                    <td>{{ProductID}}</td>
+                    <td>{{ProductName}}</td>
+                    <td>{{PositionID}}</td>
+                    <td>{{Amount}}</td>
+                    <td>{{Time}}</td>
+                </tr>
+            </table>
+        {% endif %}
+        <form action="/sqlData" method="POST">
+            <input type="submit" name="submit_button" value="SQL-Data">
+            <input type="submit" name="submit_button" value="Products">
+            <input type="submit" name="submit_button" value="Customers">
+            <input type="submit" name="submit_button" value="Resources">
+        </form>
+        <H3>Test</H3>
+        <form action="/submitOrder" method="POST">
+            {% if CustomerIDs %}
+            <select name="Customer" id="Customer-select">
+                <option value="">--Please choose an Customer--</option>
+                {% for i in CustomerIDs %}
+                <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+            </select>
+            {% endif %}
+
+            
+            {% if products %}
+            <select name="Product1" id="Product1-select">
+                <option value="">--Please choose an Product--</option>
+                {% for i in products %}
+                <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+            </select>
+            <input type="text" name="Amount1" id="Amount1" placeholder="Amount" />
+            {% endif %}
+
+            {% if products %}
+            <select name="Product2" id="Product2-select">
+                <option value="">--Please choose an Product--</option>
+                {% for i in products %}
+                <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+            </select>
+            <input type="text" name="Amount2" id="Amount2" placeholder="Amount" />
+            {% endif %}
+            
+            {% if products %}
+            <select name="Product3" id="Product3-select">
+                <option value="">--Please choose an Product--</option>
+                {% for i in products %}
+                <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+            </select>
+            <input type="text" name="Amount3" id="Amount3" placeholder="Amount" />
+            {% endif %}
+
+            <input type="submit" value="Submit" name="Submit"/>
+        </form>
+    </body>
+</html>
